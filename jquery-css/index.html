@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS com JQuery</title>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script>
+      $(() => {
+        $("html").css("zoom", "1.25");
+
+        $("#btn-addClass").click(() => {
+          $("li").addClass("addClass");
+        });
+        $("#btn-removeClass").click(() => {
+          $("#li-removeClass").removeClass("addClass");
+        });
+        $("#btn-toggleClass").click(() => {
+          $("#li-toggleClass").toggleClass("addClass");
+        });
+        $("#btn-css").click(() => {
+          $("#li-css").css({
+            transform: "scale(0.8)", // Aumenta o zoom em 20%
+            transition: "0.5s ease-in-out", // Adiciona uma transição suave
+          });
+        });
+      });
+    </script>
+    <style>
+      li {
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+        text-align: center;
+        vertical-align: middle;
+        color: antiquewhite;
+        background-color: darkslategray;
+        height: 80px;
+      }
+
+      .addClass {
+        background-color: brown ;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>CSS com JQuery</h1>
+    <main>
+      <ul>
+        <p>JQuery principais metodos para manipulação de CSS:</p>
+        <div>
+          <button id="btn-addClass">addClass()</button>
+          <li id="li-addClass">
+            addClass() - Adiciona uma ou mais classes aos elementos selecionados
+          </li>
+        </div>
+        <div>
+          <button id="btn-removeClass">removeClass()</button>
+          <li id="li-removeClass">
+            removeClass() - Remove uma ou mais classes aos elementos
+            selecionados
+          </li>
+        </div>
+        <div>
+          <button id="btn-toggleClass">toggleClass()</button>
+          <li id="li-toggleClass">
+            toggleClass() - Alterna entre adicionar e remover classes aos dos
+            elementos selecionados
+          </li>
+        </div>
+        <div>
+          <button id="btn-css">css()</button>
+          <li id="li-css">css() - define ou retorna o atributo de estilo</li>
+        </div>
+      </ul>
+    </main>
+  </body>
+</html>

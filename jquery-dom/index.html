@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manipulando DOM</title>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script>
+      $(function () {
+        $("#btn1").click(() => {
+          alert("text():" + $("#text-html-val").text());
+        });
+        $("#btn2").click(() => {
+          alert("html():" + $("#text-html-val").html());
+        });
+        $("#btn3").click(() => {
+          alert($("#input-text-html-val").val());
+        });
+
+        $("#btn4").click(() => {
+          $("#config-text-html-val").text("Novo conteúdo de texto por text()");
+        });
+
+        $("#btn5").click(() => {
+          $("#config-text-html-val").html(
+            "<h4>Novo conteúdo HTML por html()</h4>"
+          );
+        });
+
+        $("#btn6").click(() => {
+          $("#input-config-text-html-val").val("Novo valor para campo");
+        });
+
+        $("#btn-append").click(() => {
+          $("#add-conteudo").append(`
+          <li>append() - Insere um conteúdo no final do elemento selecionado</li>
+          `);
+        });
+        $("#btn-prepend").click(() => {
+          $("#add-conteudo").prepend(`
+          <li>prepend() - Insere um conteúdo no inicio do elemento selecionado</li>
+          `);
+        });
+        $("#btn-after").click(() => {
+          $("#add-conteudo").after(`
+          <li>after() - Insere um conteúdo após do elemento selecionado</li>
+          `);
+        });
+        $("#btn-before").click(() => {
+          $("#add-conteudo").before(`
+          <li>before() - Insere um conteúdo antes do elemento selecionado</li>
+          `);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <main>
+      <h1>JQuery - Manipulando conteúdo e atributos</h1>
+      <section>
+        <h2 id="text-html-val">
+          Obtendo conteúdos - <strong>text(), html() e val()</strong>
+        </h2>
+        <ul>
+          <li>
+            text() - Define e retorna o conteúdo de texto dos elementos
+            selecionado
+          </li>
+          <li>
+            html() - Define e retorna oo conteúdo dos elementos
+            selecionadoos(incluindo marcação HTML)
+          </li>
+          <li>val() - Define e retorna o valor dos campos do formulario</li>
+        </ul>
+
+        <div>
+          <button id="btn1">text()</button>
+          <button id="btn2">html()</button>
+        </div>
+
+        <div>
+          <p>
+            Campo texto:
+            <input
+              id="input-text-html-val"
+              type="text"
+              value="Estudo de JQuery"
+            />
+          </p>
+          <button id="btn3">Alerta com valor usando -> val()</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>
+          Configurando conteúdos - <strong> text(), html() e val() </strong>
+        </h2>
+        <h3 id="config-text-html-val">
+          Elemento para manipular usando -
+          <strong> text(), html() e val() </strong>
+        </h3>
+        <div>
+          <button id="btn4">Configura texto -> text()</button>
+          <button id="btn5">Configura HTML - > html()</button>
+        </div>
+        <div>
+          <p>
+            Campo texto:
+            <input
+              id="input-config-text-html-val"
+              type="text"
+              value="Estudo de JQuery"
+            />
+          </p>
+          <button id="btn6">Configura valor -> val()</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Adicionando conteúdo - append(), prepend(). after() e before()</h2>
+
+        <ul id="add-conteudo"></ul>
+
+        <div>
+          <button id="btn-append">append()</button>
+          <button id="btn-prepend">prepend()</button>
+          <button id="btn-after">after()</button>
+          <button id="btn-before">before()</button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
