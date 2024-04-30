@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script>
+      $(function () {
+        $("button").click(function () {
+          //   $("h4").hide();
+          $("#getByID").hide();
+          $(".getByClass").hide();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>JQuery Sintaxe</h1>
+
+    <div>
+      <h4>Acesso de elemento por tag</h4>
+      <h4 id="getByID">Acesso de elemento por id</h4>
+      <h4 class="getByClass">Acesso de elemento por class</h4>
+      <button>Show/Hide</button>
+    </div>
+
+    <section>
+      <h2>Estrutura basica da sintaxe JQuery</h2>
+      <ul>
+        <li>A sintaxe basica é: $(selector).action()</li>
+        <li>Um sinal $ para definir/acessar JQuery</li>
+        <li>O seletor para "consultar (ou localizar)" elementos HTML</li>
+        <li>A action é a ação a ser executada no(s) elemento(s)</li>
+      </ul>
+    </section>
+  </body>
+</html>

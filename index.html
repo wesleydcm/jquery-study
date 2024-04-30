@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("main").append(`
+          <section>
+            <h3>Duas de evitar que  código JQuery sejam utilizados antes que o documento termine de carregary:</h3>
+
+<pre lang="HTML">
+$(document).ready(function(){
+// código
+})  
+</pre>
+
+            <p>ou</p>
+
+<pre>
+  $(function(){
+    // código
+  })  
+</pre>
+            
+          </section>
+        `);
+      });
+    </script>
+  </head>
+  <body>
+    <header><h1>JQuery</h1></header>
+    <main>
+      <section>
+        <h2>Document Ready</h2>
+        <p>
+          É importante garantir que os elementos que estamos manipulando com
+          JQuery já estejam criados no documento, que já estejam carregados no
+          browser.
+        </p>
+        <p>
+          Erros comuns ao usar metodos de manipular elementos antes do documento
+          ser totalmente carregado:
+        </p>
+
+        <ul>
+          <li>Tentar esconder um elemento que não foi criado</li>
+          <li>Tentar obter o tamanho de uma imagem que não foi carregada</li>
+          <li>
+            Em resumo tentar acessar/localizar elementos que não foram
+            carregados.
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
